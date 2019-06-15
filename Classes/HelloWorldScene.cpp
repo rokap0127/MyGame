@@ -101,20 +101,62 @@ bool HelloWorld::init()
         this->addChild(label, 1);
     }
 
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-    if (sprite == nullptr)
-    {
-        problemLoading("'HelloWorld.png'");
-    }
-    else
-    {
-        // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    //// add "HelloWorld" splash screen"
+    //auto sprite = Sprite::create("HelloWorld.png");
+    //if (sprite == nullptr)
+    //{
+    //    problemLoading("'HelloWorld.png'");
+    //}
+    //else
+    //{
+    //    // position the sprite on the center of the screen
+    //    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
-        // add the sprite as a child to this layer
-        this->addChild(sprite, 0);
-    }
+    //    // add the sprite as a child to this layer
+    //    this->addChild(sprite, 0);
+    //}
+
+	//テクスチャファイル名を指定して、スプライトを作成
+	sprite = Sprite::create("sample08.png");
+	//シーングラフにつなぐ
+	this->addChild(sprite);
+	//表示座標を指定
+	sprite->setPosition(Vec2(1250.0f / 2, 750.0f / 2));
+	//回転角を指定（180度）
+	/*sprite->setRotation(90.0f);*/
+	//拡縮を指定（横0.2倍、　縦0.2倍）
+	/*sprite->setScale(0.2f, 0.2f);*/
+	//左右反転
+	//sprite->setFlippedX(true);
+	//上下反転
+	//sprite->setFlippedY(true);
+	//表示（true）非表示にする(false)
+	sprite->setVisible(true);
+	//色合いを設定
+	//sprite->setColor(Color3B(0xff, 0x00, 0x000));
+	//赤
+	//sprite->setColor(Color3B(255, 0, 0));
+	//青
+	/*sprite->setColor(Color3B(0, 0, 255));*/
+	//不透明度を設定
+	//sprite->setOpacity(255);
+
+	//基準点を変える
+	/*sprite->setAnchorPoint(Vec2(1.0f, 1.0f));*/
+
+	//切り取り
+	/*sprite->setTextureRect(Rect(500, 100, 1000, 400));*/
+	sprite->setTextureRect(Rect(0, 0, 32, 32));
+	//拡大
+	sprite-> setScale(3.0f);
+	
+
+	//update関数を有効にする
+	this->scheduleUpdate();
+
+	counter = 0;
+	state = 0;
+
     return true;
 }
 
@@ -130,4 +172,80 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
     //_eventDispatcher->dispatchEvent(&customEndEvent);
 
 
+}
+
+void HelloWorld::update(float delta) {
+	//ここに更新処理を書く
+
+	////＊＊問題１＊＊
+	////スプライトの現在座標を取得する
+	//Vec2 pos = sprite->getPosition();
+	////座標を移動させる
+	//pos += Vec2(-1.0f, 0.0f);
+	////移動後の座標を反映
+	//sprite->setPosition(pos);
+
+	////＊＊問題２＊＊
+	////5秒＝300frm
+	//counter++;
+	//if (counter > 300) {
+	//	counter = 300;
+	//}
+
+	//float spriteOpacity = sprite->getOpacity();
+
+	//spriteOpacity = 255 - (counter / 300.0f * 255.0f);
+	//spriteOpacity = 255.0f - spriteOpacity;
+	//sprite->setOpacity(spriteOpacity);
+
+
+
+	//＊＊問題３＊＊
+	//Vec2 pos;
+
+	//switch (state)
+	//{
+	//case 0:
+	//	//左に移動
+	//	pos = sprite->getPosition();
+	//	pos += Vec2(-5.0f, 0.0f);
+	//	sprite->setPosition(pos);
+	//	//左についたら
+	//	if (pos.x <= 100) {
+	//		state = 1;
+	//	}
+	//	break;
+	//case 1:
+	//	//下に移動
+	//	pos = sprite->getPosition();
+	//	pos += Vec2(0.0f, -5.0f);
+	//	sprite->setPosition(pos);
+	//	//下についたら
+	//	if (pos.y < 100) {
+	//		state = 2;
+	//	}
+	//	break;
+	//case 2:
+	//	//右に移動
+	//	pos = sprite->getPosition();
+	//	pos += Vec2(5.0f, 0.0f);
+	//	sprite->setPosition(pos);
+	//	//右についたら
+	//	if (pos.x > 1150) {
+	//		state = 3;
+	//	}
+	//	break;
+	//case 3:
+	//	//上に移動
+	//	pos = sprite->getPosition();
+	//	pos += Vec2(0.0f, 5.0f);
+	//	sprite->setPosition(pos);
+	//	//上についたら
+	//	if (pos.y > 600.0f) {
+	//		state = 0;
+	//	}
+	//	break;
+	//default:
+	//	break;
+	//}
 }
