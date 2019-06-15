@@ -48,6 +48,12 @@ public:
 	int counter;
 
 	int state;
+
+	int rotation;
+
+	int red;
+
+	int blue;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
