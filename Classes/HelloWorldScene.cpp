@@ -108,19 +108,60 @@ bool HelloWorld::init()
 	//—”‚Ì‰Šú‰»
 	srand(time(nullptr));
 
-	for(int i=0;i<5;i++)
-	{
-		sprite[i] = Sprite::create("owl.png");
-		this->addChild(sprite[i]);
-		sprite[i]->setScale(0.2f);
-		sprite[i]->setPosition(Vec2(300 + i*100, visibleSize.height / 2.0f));
+	//for(int i=0;i<5;i++)
+	//{
+	//	sprite[i] = Sprite::create("owl.png");
+	//	this->addChild(sprite[i]);
+	//	sprite[i]->setScale(0.2f);
+	//	sprite[i]->setPosition(Vec2(300 + i*100, visibleSize.height / 2.0f));
 
-		float mx, my;
-		mx = (float)rand() / RAND_MAX * 500 - 250;
-		my = (float)rand() / RAND_MAX * 500 - 250;
-		MoveBy* action1 = MoveBy::create(1.0f, Vec2(mx, my));
-		sprite[i]->runAction(action1);
-	}
+	//	float mx, my;
+	//	mx = (float)rand() / RAND_MAX * 500 - 250;
+	//	my = (float)rand() / RAND_MAX * 500 - 250;
+	//	MoveBy* action1 = MoveBy::create(1.0f, Vec2(mx, my));
+	//	sprite[i]->runAction(action1);
+	//}
+
+	//–â‘è‚P
+	//sprite[0] = Sprite::create("owl.png");
+	//this->addChild(sprite[0]);
+	//sprite[1] = Sprite::create("owl.png");
+	//this->addChild(sprite[1]);
+	//sprite[0]->setScale(0.2f);
+	//sprite[1]->setScale(0.2f);
+	//sprite[0]->setPosition(Vec2(300, 200));
+	//sprite[1]->setPosition(Vec2(550, 200));
+	////ƒAƒNƒVƒ‡ƒ“
+	//JumpBy*action1 = JumpBy::create(2.0f, Vec2(300, 0), 100.0f, 1);
+	//sprite[0]->runAction(action1);
+	//sprite[1]->runAction(action1->clone());
+
+	//–â‘è‚Q
+	//for (int i = 0; i < 10; i++) {
+	//	sprite[i] = Sprite::create("owl.png");
+	//	this->addChild(sprite[i]);
+	//	sprite[i]->setScale(0.2f);
+	//	sprite[i]->setPosition(Vec2(150 + i * 150, 200));
+	//	JumpBy*action1 = JumpBy::create(2.0f, Vec2(150, 0), 200.0f, 1);
+	//	sprite[i]->runAction(action1);
+	//}
+	//–â‘è‚R
+		
+		//for (int i = 0; i < 10; i++) {
+		//	float vecX, vecY, mx, my;
+		//	vecX = (float)rand() / RAND_MAX * 1000;
+		//	vecY = (float)rand() / RAND_MAX * 500;
+		//	//-250-250
+		//	mx = (float)rand() / RAND_MAX * 500 - 250;
+		//	my = (float)rand() / RAND_MAX * 500 - 150;
+		//	sprite[i] = Sprite::create("owl.png");
+		//	this->addChild(sprite[i]);
+		//	sprite[i]->setScale(0.2f);
+		//	sprite[i]->setPosition(Vec2(vecX, vecY));
+		//	JumpBy*action1 = JumpBy::create(2.0f, Vec2(mx, my), 500.0f, 1);
+		//	sprite[i]->runAction(action1);
+		//}
+
     //// add "HelloWorld" splash screen"
     //auto sprite = Sprite::create("HelloWorld.png");
     //if (sprite == nullptr)
