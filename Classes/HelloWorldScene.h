@@ -44,6 +44,7 @@ public:
 
 	//スプライト
 	cocos2d::Sprite* sprite;
+	cocos2d::Sprite* sprite01;
 
 	int counter;
 
@@ -54,6 +55,8 @@ public:
 	int red;
 
 	int blue;
+
+	int draw;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
