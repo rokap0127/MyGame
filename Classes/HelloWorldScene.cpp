@@ -104,7 +104,23 @@ bool HelloWorld::init()
         // add the label as a child to this layer
         this->addChild(label, 1);
     }
+	
+	//乱数の初期化
+	srand(time(nullptr));
 
+	for(int i=0;i<5;i++)
+	{
+		sprite[i] = Sprite::create("owl.png");
+		this->addChild(sprite[i]);
+		sprite[i]->setScale(0.2f);
+		sprite[i]->setPosition(Vec2(300 + i*100, visibleSize.height / 2.0f));
+
+		float mx, my;
+		mx = (float)rand() / RAND_MAX * 500 - 250;
+		my = (float)rand() / RAND_MAX * 500 - 250;
+		MoveBy* action1 = MoveBy::create(1.0f, Vec2(mx, my));
+		sprite[i]->runAction(action1);
+	}
     //// add "HelloWorld" splash screen"
     //auto sprite = Sprite::create("HelloWorld.png");
     //if (sprite == nullptr)
@@ -122,19 +138,25 @@ bool HelloWorld::init()
 
 	//テクスチャファイル名を指定して、スプライトを作成
 	
-	sprite = Sprite::create("owl.png");
-	/*シーングラフにつなぐ*/ 
-	this->addChild(sprite);
-	sprite->setPosition(Vec2(100, 100));
-	sprite->setScale(0.2f);
+	//sprite = Sprite::create("owl.png");
+	//sprite2 = Sprite::create("animal_lion.png");
+	///*シーングラフにつなぐ*/ 
+	//this->addChild(sprite);
+	//this->addChild(sprite2);
+	////スプライト
+	//sprite->setPosition(Vec2(100, 100));
+	//sprite->setScale(0.2f);
+	//sprite2->setPosition(Vec2(200, 150));
 
-	//アクション作成
-	MoveBy* action1 = MoveBy::create(1.0f, Vec2(1000,500));
+	////アクション作成
+	//MoveBy* action1 = MoveBy::create(1.0f, Vec2(1000,500));
+	//sprite->runAction(action1);
+	//MoveBy* action2 = MoveBy::create(1.0f, Vec2(1000, 500));
+	//sprite2->runAction(action1->clone());
 	//MoveTo* action1 = MoveTo::create(1.0f, Vec2(200, 100));
 	//ScaleTo* action1 = ScaleTo::create(1.0f, 1.0f);
 	//EaseIn* action2 = EaseIn::create(action1, 2.0f);
 	//EaseBounceOut* action2 = EaseBounceOut::create(action1);
-	sprite->runAction(action1);
 	//sprite->runAction(action2);
 
     return true;
