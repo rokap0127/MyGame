@@ -48,7 +48,7 @@ public:
 
 	//スプライトの配列
 	cocos2d::Sprite* sprite[100];
-
+	int state;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

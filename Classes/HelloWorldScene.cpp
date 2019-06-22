@@ -161,7 +161,26 @@ bool HelloWorld::init()
 		//	JumpBy*action1 = JumpBy::create(2.0f, Vec2(mx, my), 500.0f, 1);
 		//	sprite[i]->runAction(action1);
 		//}
-
+	//–â‘è4
+		sprite[0] = Sprite::create("owl.png");
+		this->addChild(sprite[0]);
+		sprite[0]->setScale(0.2f);
+		sprite[0]->setPosition(Vec2(visibleSize.width - 150.0f, visibleSize.height - 150.0f));
+		//MoveBy* action1 = MoveBy::create(10.0f, Vec2(-visibleSize.width+300.0f, 0.0f));
+		//sprite[0]->runAction(action1);
+		//FadeOut* action2 = FadeOut::create(5.0f);
+		//sprite[0]->runAction(action2);
+		state = 0;
+		switch (state)
+		{
+		case 0:
+			MoveBy * action1 = MoveBy::create(10.0f, Vec2(-visibleSize.width + 300.0f, 0.0f));
+			sprite[0]->runAction(action1);
+			if (sprite[0]->getPosition <= -visibleSize.width + 300.0f) {
+				state = 1;
+			}
+			break;
+		}
     //// add "HelloWorld" splash screen"
     //auto sprite = Sprite::create("HelloWorld.png");
     //if (sprite == nullptr)
