@@ -122,59 +122,59 @@ bool HelloWorld::init()
 
 	//テクスチャファイル名を指定して、スプライトを作成
 	
-	//sprite = Sprite::create("animal_lion.png");
-	//シーングラフにつなぐ
+	////sprite = Sprite::create("animal_lion.png");
+	////シーングラフにつなぐ
+	////this->addChild(sprite);
+
+	//////表示座標を指定
+	////sprite->setPosition(Vec2(visibleSize.width/2.0f, visibleSize.height/2.0f));
+	//
+	//////切り取り
+	//////                          x  y  w    h
+	////sprite->setTextureRect(Rect(40, 40, 40, 40));
+	//////拡大
+	////sprite-> setScale(3.0f);
+
+	////＊＊＊＊問題１&問題２＊＊＊＊
+	//////回転の中心を左上に変更
+	////sprite->setAnchorPoint(Vec2(0, 1.0f));
+
+	//////赤
+	////sprite->setColor(Color3B(255, 0, 0));
+
+	////＊＊＊＊問題3＊＊＊＊
+	////sprite01 = Sprite::create("owl.png");
+	////this->addChild(sprite01);
+	////sprite01->setPosition(Vec2(visibleSize.width / 2.0f, visibleSize.height / 2.0f));
+	////sprite01->setOpacity(0);
+	////sprite->setOpacity(255);
+	////sprite01->setScale(0.2f);
+
+	////＊＊＊＊問題４＊＊＊＊
+	///*sprite->setPosition(Vec2(visibleSize.width - 200.0f, 250.0f));*/
+	////＊＊＊＊問題５＊＊＊＊
+	//sprite = Sprite::create("sample08.png");
 	//this->addChild(sprite);
-
-	////表示座標を指定
-	//sprite->setPosition(Vec2(visibleSize.width/2.0f, visibleSize.height/2.0f));
-	
-	////切り取り
+	//sprite->setPosition(Vec2(visibleSize.width / 2.0f - 400, visibleSize.height / 2.0f));
+	//sprite->setScale(3.0f);
+	//sprite->getTexture()->setAliasTexParameters();
 	////                          x  y  w    h
-	//sprite->setTextureRect(Rect(40, 40, 40, 40));
-	////拡大
-	//sprite-> setScale(3.0f);
+	//sprite->setTextureRect(Rect(0 ,64, 32, 32));
 
-	//＊＊＊＊問題１&問題２＊＊＊＊
-	////回転の中心を左上に変更
-	//sprite->setAnchorPoint(Vec2(0, 1.0f));
-
-	////赤
-	//sprite->setColor(Color3B(255, 0, 0));
-
-	//＊＊＊＊問題3＊＊＊＊
-	//sprite01 = Sprite::create("owl.png");
+	////＊＊＊＊EX＊＊＊＊
+	//sprite01 = Sprite::create("yellow.png");
 	//this->addChild(sprite01);
-	//sprite01->setPosition(Vec2(visibleSize.width / 2.0f, visibleSize.height / 2.0f));
-	//sprite01->setOpacity(0);
-	//sprite->setOpacity(255);
-	//sprite01->setScale(0.2f);
+	//sprite01->setPosition(Vec2(visibleSize.width / 2.0f - 350, visibleSize.height / 2.0f));
+	//sprite01->setAnchorPoint(Vec2(0, 0.5f));
+	//sprite01->setScaleX(100.0f);
+	//sprite01->setScaleY(10.0f);
+	////update関数を有効にする
+	//this->scheduleUpdate();
 
-	//＊＊＊＊問題４＊＊＊＊
-	/*sprite->setPosition(Vec2(visibleSize.width - 200.0f, 250.0f));*/
-	//＊＊＊＊問題５＊＊＊＊
-	sprite = Sprite::create("sample08.png");
-	this->addChild(sprite);
-	sprite->setPosition(Vec2(visibleSize.width / 2.0f - 400, visibleSize.height / 2.0f));
-	sprite->setScale(3.0f);
-	sprite->getTexture()->setAliasTexParameters();
-	//                          x  y  w    h
-	sprite->setTextureRect(Rect(0 ,64, 32, 32));
-
-	//＊＊＊＊EX＊＊＊＊
-	sprite01 = Sprite::create("yellow.png");
-	this->addChild(sprite01);
-	sprite01->setPosition(Vec2(visibleSize.width / 2.0f - 350, visibleSize.height / 2.0f));
-	sprite01->setAnchorPoint(Vec2(0, 0.5f));
-	sprite01->setScaleX(100.0f);
-	sprite01->setScaleY(10.0f);
-	//update関数を有効にする
-	this->scheduleUpdate();
-
-	counter = 0;
-	state = 0;
-	rotation = 0;
-	draw = 0;
+	//counter = 0;
+	//state = 0;
+	//rotation = 0;
+	//draw = 0;
 
     return true;
 }
@@ -195,93 +195,5 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 
 void HelloWorld::update(float delta) {
 	//ここに更新処理を書く
-	//＊＊＊＊問題１&問題２＊＊＊＊
-	//rotation++;
-	//sprite->setRotation(rotation);
-	//if (rotation >= 360)
-	//	rotation = 0;
-
-	//counter++;
-	////180秒で255になる
-	//;
-	//sprite->setColor(Color3B(
-	//	red = 255 - (counter / 180.0f) * 255.0f,
-	//	0,
-	//	blue = (counter / 180.0f) * 255.0f
-	//));
-	//＊＊＊＊問題3＊＊＊＊
-	/*counter++;
-	sprite->setOpacity(255 - counter / 300.0f * 255.0f);
-	sprite01->setOpacity(counter / 300.0f * 255.0f);*/
-	//＊＊＊＊問題４＊＊＊＊
-	/*Vec2 pos;
-	switch (state)
-	{
-	case 0:
-		pos = sprite->getPosition();
-		pos.x = pos.x - 3;
-		sprite->setPosition(pos);
-		if (pos.x <= 0) {
-			state = 1;
-			sprite->setFlippedX(true);
-		}
-		break;
-	case 1:
-		pos = sprite->getPosition();
-		pos.x= pos.x + 3;
-		sprite->setPosition(pos);
-		if (pos.x >= 1280) {
-			state = 0;
-			sprite->setFlippedX(false);
-		}
-		break;
-	default:
-		break;
-	}*/
-
-	//＊＊＊＊問題5＊＊＊＊
-	counter++;
-	switch (state)
-	{
-	case 0:
-		if (counter < 30) {
-			draw = 32;
-		}
-		else {
-			state = 1;
-		}
-		break;
-	case 1:
-		if (counter < 60) {
-			draw = 0;
-		}
-		else
-		{
-			state = 2;
-		}
-		break;
-	case 2:
-		if (counter < 90) {
-			draw =32;
-		}
-		else {
-			state = 3;
-		}
-		break;
-	case 3:
-		if (counter < 120) {
-			draw = 64;
-		}
-		else {
-			state = 0;
-			counter = 0;
-		}
-		break;
-	default:
-		break;
-	}
-
-	sprite->setTextureRect(Rect(draw, 64, 32, 32));
-	//＊＊＊＊EX＊＊＊＊
-
+	
 }

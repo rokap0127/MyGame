@@ -46,17 +46,6 @@ public:
 	cocos2d::Sprite* sprite;
 	cocos2d::Sprite* sprite01;
 
-	int counter;
-
-	int state;
-
-	int rotation;
-
-	int red;
-
-	int blue;
-
-	int draw;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
