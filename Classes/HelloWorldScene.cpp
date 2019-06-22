@@ -122,59 +122,20 @@ bool HelloWorld::init()
 
 	//テクスチャファイル名を指定して、スプライトを作成
 	
-	////sprite = Sprite::create("animal_lion.png");
-	////シーングラフにつなぐ
-	////this->addChild(sprite);
+	sprite = Sprite::create("owl.png");
+	/*シーングラフにつなぐ*/ 
+	this->addChild(sprite);
+	sprite->setPosition(Vec2(100, 100));
+	sprite->setScale(0.2f);
 
-	//////表示座標を指定
-	////sprite->setPosition(Vec2(visibleSize.width/2.0f, visibleSize.height/2.0f));
-	//
-	//////切り取り
-	//////                          x  y  w    h
-	////sprite->setTextureRect(Rect(40, 40, 40, 40));
-	//////拡大
-	////sprite-> setScale(3.0f);
-
-	////＊＊＊＊問題１&問題２＊＊＊＊
-	//////回転の中心を左上に変更
-	////sprite->setAnchorPoint(Vec2(0, 1.0f));
-
-	//////赤
-	////sprite->setColor(Color3B(255, 0, 0));
-
-	////＊＊＊＊問題3＊＊＊＊
-	////sprite01 = Sprite::create("owl.png");
-	////this->addChild(sprite01);
-	////sprite01->setPosition(Vec2(visibleSize.width / 2.0f, visibleSize.height / 2.0f));
-	////sprite01->setOpacity(0);
-	////sprite->setOpacity(255);
-	////sprite01->setScale(0.2f);
-
-	////＊＊＊＊問題４＊＊＊＊
-	///*sprite->setPosition(Vec2(visibleSize.width - 200.0f, 250.0f));*/
-	////＊＊＊＊問題５＊＊＊＊
-	//sprite = Sprite::create("sample08.png");
-	//this->addChild(sprite);
-	//sprite->setPosition(Vec2(visibleSize.width / 2.0f - 400, visibleSize.height / 2.0f));
-	//sprite->setScale(3.0f);
-	//sprite->getTexture()->setAliasTexParameters();
-	////                          x  y  w    h
-	//sprite->setTextureRect(Rect(0 ,64, 32, 32));
-
-	////＊＊＊＊EX＊＊＊＊
-	//sprite01 = Sprite::create("yellow.png");
-	//this->addChild(sprite01);
-	//sprite01->setPosition(Vec2(visibleSize.width / 2.0f - 350, visibleSize.height / 2.0f));
-	//sprite01->setAnchorPoint(Vec2(0, 0.5f));
-	//sprite01->setScaleX(100.0f);
-	//sprite01->setScaleY(10.0f);
-	////update関数を有効にする
-	//this->scheduleUpdate();
-
-	//counter = 0;
-	//state = 0;
-	//rotation = 0;
-	//draw = 0;
+	//アクション作成
+	MoveBy* action1 = MoveBy::create(1.0f, Vec2(1000,500));
+	//MoveTo* action1 = MoveTo::create(1.0f, Vec2(200, 100));
+	//ScaleTo* action1 = ScaleTo::create(1.0f, 1.0f);
+	//EaseIn* action2 = EaseIn::create(action1, 2.0f);
+	//EaseBounceOut* action2 = EaseBounceOut::create(action1);
+	sprite->runAction(action1);
+	//sprite->runAction(action2);
 
     return true;
 }
