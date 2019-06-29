@@ -104,120 +104,12 @@ bool HelloWorld::init()
         // add the label as a child to this layer
         this->addChild(label, 1);
     }
-	
-	//乱数の初期化
-	srand(time(nullptr));
+	//スプライトの生成
+	Sprite* sprite = Sprite::create("owl.png");
+	this->addChild(sprite);
+	sprite->setScale(0.3f);
 
-	//for(int i=0;i<5;i++)
-	//{
-	//	sprite[i] = Sprite::create("owl.png");
-	//	this->addChild(sprite[i]);
-	//	sprite[i]->setScale(0.2f);
-	//	sprite[i]->setPosition(Vec2(300 + i*100, visibleSize.height / 2.0f));
 
-	//	float mx, my;
-	//	mx = (float)rand() / RAND_MAX * 500 - 250;
-	//	my = (float)rand() / RAND_MAX * 500 - 250;
-	//	MoveBy* action1 = MoveBy::create(1.0f, Vec2(mx, my));
-	//	sprite[i]->runAction(action1);
-	//}
-
-	//問題１
-	//sprite[0] = Sprite::create("owl.png");
-	//this->addChild(sprite[0]);
-	//sprite[1] = Sprite::create("owl.png");
-	//this->addChild(sprite[1]);
-	//sprite[0]->setScale(0.2f);
-	//sprite[1]->setScale(0.2f);
-	//sprite[0]->setPosition(Vec2(300, 200));
-	//sprite[1]->setPosition(Vec2(550, 200));
-	////アクション
-	//JumpBy*action1 = JumpBy::create(2.0f, Vec2(300, 0), 100.0f, 1);
-	//sprite[0]->runAction(action1);
-	//sprite[1]->runAction(action1->clone());
-
-	//問題２
-	//for (int i = 0; i < 10; i++) {
-	//	sprite[i] = Sprite::create("owl.png");
-	//	this->addChild(sprite[i]);
-	//	sprite[i]->setScale(0.2f);
-	//	sprite[i]->setPosition(Vec2(150 + i * 150, 200));
-	//	JumpBy*action1 = JumpBy::create(2.0f, Vec2(150, 0), 200.0f, 1);
-	//	sprite[i]->runAction(action1);
-	//}
-	//問題３
-		
-		//for (int i = 0; i < 10; i++) {
-		//	float vecX, vecY, mx, my;
-		//	vecX = (float)rand() / RAND_MAX * 1000;
-		//	vecY = (float)rand() / RAND_MAX * 500;
-		//	//-250-250
-		//	mx = (float)rand() / RAND_MAX * 500 - 250;
-		//	my = (float)rand() / RAND_MAX * 500 - 150;
-		//	sprite[i] = Sprite::create("owl.png");
-		//	this->addChild(sprite[i]);
-		//	sprite[i]->setScale(0.2f);
-		//	sprite[i]->setPosition(Vec2(vecX, vecY));
-		//	JumpBy*action1 = JumpBy::create(2.0f, Vec2(mx, my), 500.0f, 1);
-		//	sprite[i]->runAction(action1);
-		//}
-	//問題4
-		sprite[0] = Sprite::create("owl.png");
-		this->addChild(sprite[0]);
-		sprite[0]->setScale(0.2f);
-		sprite[0]->setPosition(Vec2(visibleSize.width - 150.0f, visibleSize.height - 150.0f));
-		//MoveBy* action1 = MoveBy::create(10.0f, Vec2(-visibleSize.width+300.0f, 0.0f));
-		//sprite[0]->runAction(action1);
-		//FadeOut* action2 = FadeOut::create(5.0f);
-		//sprite[0]->runAction(action2);
-		state = 0;
-		switch (state)
-		{
-		case 0:
-			MoveBy * action1 = MoveBy::create(10.0f, Vec2(-visibleSize.width + 300.0f, 0.0f));
-			sprite[0]->runAction(action1);
-			if (sprite[0]->getPosition <= -visibleSize.width + 300.0f) {
-				state = 1;
-			}
-			break;
-		}
-    //// add "HelloWorld" splash screen"
-    //auto sprite = Sprite::create("HelloWorld.png");
-    //if (sprite == nullptr)
-    //{
-    //    problemLoading("'HelloWorld.png'");
-    //}
-    //else
-    //{
-    //    // position the sprite on the center of the screen
-    //    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    //    // add the sprite as a child to this layer
-    //    this->addChild(sprite, 0);
-    //}
-
-	//テクスチャファイル名を指定して、スプライトを作成
-	
-	//sprite = Sprite::create("owl.png");
-	//sprite2 = Sprite::create("animal_lion.png");
-	///*シーングラフにつなぐ*/ 
-	//this->addChild(sprite);
-	//this->addChild(sprite2);
-	////スプライト
-	//sprite->setPosition(Vec2(100, 100));
-	//sprite->setScale(0.2f);
-	//sprite2->setPosition(Vec2(200, 150));
-
-	////アクション作成
-	//MoveBy* action1 = MoveBy::create(1.0f, Vec2(1000,500));
-	//sprite->runAction(action1);
-	//MoveBy* action2 = MoveBy::create(1.0f, Vec2(1000, 500));
-	//sprite2->runAction(action1->clone());
-	//MoveTo* action1 = MoveTo::create(1.0f, Vec2(200, 100));
-	//ScaleTo* action1 = ScaleTo::create(1.0f, 1.0f);
-	//EaseIn* action2 = EaseIn::create(action1, 2.0f);
-	//EaseBounceOut* action2 = EaseBounceOut::create(action1);
-	//sprite->runAction(action2);
 
     return true;
 }

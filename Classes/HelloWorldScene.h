@@ -47,7 +47,8 @@ public:
 	//cocos2d::Sprite* sprite2;
 
 	//スプライトの配列
-	cocos2d::Sprite* sprite[100];
+	//cocos2d::Sprite* sprite[100];
+	cocos2d::Sprite* sprite;
 	int state;
 };
 
