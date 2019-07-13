@@ -33,9 +33,9 @@ public:
     static cocos2d::Scene* createScene();
 
     virtual bool init();
-
 	void update(float delta) override;
-    
+	//関数
+	void foamMove(); //泡
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
     
@@ -43,8 +43,13 @@ public:
     CREATE_FUNC(HelloWorld);
 
 	//スプライト
+	cocos2d::Sprite* backGround; //背景　
+	cocos2d::Sprite* kirby_sleep; //寝ているカービィ
+	cocos2d::Sprite* foam; //泡
 
-	//スプライトの配列
+	cocos2d::Vec2* foamPosition;
+
+	//Vec2 foamPosition;
 
 };
 

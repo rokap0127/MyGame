@@ -85,7 +85,36 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
+	//背景
+	backGround = Sprite::create("backGround2.jpg");
+	backGround->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+	backGround->setScaleX(1.22f);
+	backGround->setScaleY(1.31f);
+	this->addChild(backGround);
 
+	//スリープカービィ生成
+	kirby_sleep = Sprite::create("sleep2.png");
+	kirby_sleep->setPosition(Vec2(300, 200));
+	this->addChild(kirby_sleep);
+	//泡の生成
+	foam = Sprite::create("foam.png");
+	Vec2 foamPosition = kirby_sleep->getPosition();
+	foam->setPosition(foamPosition + Vec2(-50,20));
+	this->addChild(foam);
+
+	//関数生成
+	//CallFunc* action = CallFunc::create(CC_CALLBACK_0(HelloWorld::foamMove, this));
+	//foam->runAction(action);
+	//泡のアクション
+	MoveTo* foamRise = MoveTo::create(3.0f ,foamPosition + Vec2(-50, 60));
+	FadeOut* foamFade = FadeOut::create(0.5f);
+	ScaleTo* foamScale = ScaleTo::create(3.0f, 1.5f);
+	Spawn* foamSpawn = Spawn::create(foamRise, foamScale, nullptr);
+	Sequence* foamSeqence = Sequence::create(foamSpawn, foamFade, nullptr);
+	/*Repeat* foamRepeat = Repeat::create(foamSeqence, 3.0f);*/
+	foam->runAction(foamSeqence);
+
+	CallFunc* foamAction = CallFunc::create(CC_CALLBACK_0(HelloWorld::foamMove, this));
 	//update関数を有効にする
 	this->scheduleUpdate();
 
@@ -109,4 +138,12 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 void HelloWorld::update(float delta) {
 	//ここに更新処理を書く
 
+}
+
+void HelloWorld::foamMove() {
+	//泡の生成
+	foam = Sprite::create("foam.png");
+	Vec2 foamPosition = kirby_sleep->getPosition();
+	foam->setPosition(foamPosition + Vec2(-50, 20));
+	this->addChild(foam);
 }
