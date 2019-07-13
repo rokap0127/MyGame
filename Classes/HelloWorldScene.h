@@ -43,16 +43,9 @@ public:
     CREATE_FUNC(HelloWorld);
 
 	//スプライト
-	//cocos2d::Sprite* sprite;
-	//cocos2d::Sprite* sprite2;
 
 	//スプライトの配列
-	//cocos2d::Sprite* sprite[100];
-	cocos2d::Sprite* sprite;
-	cocos2d::Sprite* sprite2;
-	cocos2d::Sprite* sprite3;
-	cocos2d::Texture2D* texture;
-	int state;
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__
